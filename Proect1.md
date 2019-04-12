@@ -19,3 +19,9 @@ It also sounds like some of the older techniques generally preferred a conjugate
 
 # Certifiably Correct SLAM
 When running a large optimization procedure, it would be nice to know if you have converged to a local or global optimum.  [This paper](https://dspace.mit.edu/handle/1721.1/107296) claims to do that for the SLAM problem
+
+# Variational Inference
+When performing machine learning, one common task is to take a set of samples and create a parametric distribution that is "close" to those samples in some way.  Typically, the Kullback-Leibler divergence is the metric that is minimized.  In Christopher Bishop's book "Pattern Recognition and Machine Learning", and expectation maxmimization (EM) procedure is described to find the best mixture of Gaussians to represent a set of samples.  The problem is that EM can take a long time to converge.  [This paper](https://www.cs.cmu.edu/~rsalakhu/papers/emecg.pdf) claims to have a much quicker way to run EM.  (Basically, it claims that EM is similar to gradient descent, while other Newton-type methods can converge quicker).
+
+# Quadratic Programming
+Chapter 16 of the book introduces a method for solving a least squares type problem, but with multiple constraints imposed on that problem.  I am interested in knowing if this could be used for loop-closure with SLAM in two scenarios.  One, where the IMU data is the quadratic expression to be minimized, but with loop-closing constraints.  The second, more challenging, would be minimum distances apart for some nodes in a SLAM framework.
