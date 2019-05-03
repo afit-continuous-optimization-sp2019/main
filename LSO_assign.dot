@@ -1,4 +1,4 @@
-digraph TwoAircraftMeasurements {
+digraph ThreeAircraftMeasurements {
     splines=false
     {rank=same i1  i2  i3  idots in}
     i1[style=invis]
@@ -23,28 +23,21 @@ digraph TwoAircraftMeasurements {
     edge[arrowhead=none]
     {rank=same x1 -> x2 -> x3 -> dots -> xN}
     dots[label=<...>]
-    subgraph cluster_0{
-        color=none
-        #Here just for keeping L1, L2, L3 in order...
-        edge[style=invisible,arrowhead="none"]
-        {rank=same L1 -> L2 -> L3}
-    }
     
-    x1 -> L1;
-    x2 -> L1;
-    x3 -> L1;
-    xN -> L1;
+    {rank=same b1  b2  b3  bdots bn}
+    b1[style=invis]
+    b2[style=invis]
+    b3[style=invis]
+    bdots[style=invis]
+    bn[style=invis]    
 
-    x1 -> L2;
-    x2 -> L2;
-    x3 -> L2;
-    xN -> L2;
-
-    x1 -> L3;
-    x2 -> L3;
-    x3 -> L3;
-    xN -> L3;
-
+    subgraph boxnodesDown{
+        edge[arrowhead=box]
+        x1 -> b1
+        x2 -> b2
+        x3 -> b3
+        xN -> bn
+    }
 
 
     
